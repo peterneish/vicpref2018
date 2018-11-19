@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Victorian Preferences 2018</title>
+   <script src="https://d3js.org/d3.v5.min.js"></script>
+   <style type="text/css">
+    </style
+</head>
+<body>
+<h1>Victorian Preferences 2018</h1>
+<ul id="areas"></ul>
+<div id="chart" class="chart">
+</div>
+<script>
+d3.xml("./State2018MediaFileGroupsAndTickets.xml", "application/xml", function(xml) {
+  d3.select("#areas")
+    .selectAll("li")
+    .data(xml.documentElement.getElementsByTagName("contest"))
+    .enter().append("li")
+      .text(function(d) { return d.getElementsByTagName("eml:ContestName").textContent; });
+});
+
+</script>
+</body>
+</html>
