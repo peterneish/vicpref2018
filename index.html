@@ -13,7 +13,7 @@
 </div>
 <script>
 d3.xml("State2018MediaFileGroupsAndTickets.xml",  function(xml) {
-   console.log(xml)
+   console.log(xml);
   d3.select("#areas")
     .selectAll("li")
     .data(xml.documentElement.getElementsByTagName("contest"))
