@@ -12,13 +12,10 @@
 <div id="chart" class="chart">
 </div>
 <script>
-d3.xml("State2018MediaFileGroupsAndTickets.xml",  function(xml) {
+d3.xml("State2018MediaFileGroupsAndTickets.xml",  function(error, xml) {
+   if(error) throw error;
    console.log(xml);
-  d3.select("#areas")
-    .selectAll("li")
-    .data(xml.documentElement.getElementsByTagName("contest"))
-    .enter().append("li")
-      .text(function(d) { return d.getElementsByTagName("eml:ContestName").textContent; });
+  
 });
 
 </script>
