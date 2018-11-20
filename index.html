@@ -2,7 +2,7 @@
 <html>
 <head>
    <title>Victorian Preferences 2018</title>
-   <script src="https://d3js.org/d3.v5.min.js"></script>
+   
    <style type="text/css">
     </style
 </head>
@@ -11,12 +11,12 @@
 <ul id="areas"></ul>
 <div id="chart" class="chart">
 </div>
+<script src="https://d3js.org/d3.v5.min.js"></script>
 <script>
       console.log("test");
-d3.xml("State2018MediaFileGroupsAndTickets.xml",  function(error, xml) {
+d3.xml("/State2018MediaFileGroupsAndTickets.xml",  function(error, xml) {
    if(error) throw error;
    console.log(xml);
-  
 });
 
 </script>
